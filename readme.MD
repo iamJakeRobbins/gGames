@@ -2,11 +2,11 @@
 
 [ ] Rendering HTML through Handlebars
 
-[ ] Setting up a database with knex migrations and seeds
+[x] Setting up a database with knex migrations and seeds
 
 [ ] Express routes (in app.js or a separate routes folder)
 
-[ ] Knex query to get all
+[x] Knex query to get all
 
 [ ] Knex query to get one
 
@@ -18,4 +18,4 @@
 
 [ ] Knex joins
 
-[ ] Deploying to Heroku
+[x] Deploying to Heroku
