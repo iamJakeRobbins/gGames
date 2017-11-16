@@ -12,6 +12,16 @@ router.get('/', (req, res) => {
 	})
 });
 
+router.get('/:id', (req, res) =>{
+	knex('gamer')
+	.select()
+	.where('id', req.params.id)
+	.first()
+	.then(gamer =>{
+		res.render('gamers/single', {gamer:gamer})
+	})
+});
+
 router.post('/', (req, res) =>{
 	knex('gamer')
 	.insert({
