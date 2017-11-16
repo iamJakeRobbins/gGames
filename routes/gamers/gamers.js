@@ -12,5 +12,15 @@ router.get('/', (req, res) => {
 	})
 });
 
+router.post('/', (req, res) =>{
+	knex('gamer')
+	.insert({
+		name:req.body.name,
+	})
+	.then( () =>{
+		res.redirect('gamers')
+	})
+})
+
 
 module.exports = router;
