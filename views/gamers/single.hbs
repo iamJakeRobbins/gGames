@@ -11,7 +11,7 @@
 		<label for="name">
 			Name
 		</label>
-		<input type="text"  id="name" name='title' value="{{game.name}}" placeholder="Enter a gamer name" required>
+		<input type="text"  id="name" name='title' value="{{gamer.name}}" placeholder="Enter a gamer name" required>
 	</div>
 	<button type="submit">
 		Edit
@@ -26,3 +26,8 @@
 	</div>
 <button type="submit">Delete</button>
 </form>
+
+<h2>Games {{gamer.name}} Plays:</h2>
+	{{#each gamesData}}
+		<li>{{title}}</li>
+	{{/each}}

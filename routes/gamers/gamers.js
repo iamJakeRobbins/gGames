@@ -15,10 +15,21 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) =>{
 	knex('gamer')
 	.select()
-	.where('id', req.params.id)
-	.first()
+	.where('gamer.id', req.params.id)
+	// .then(gameypeople =>{
+	.leftJoin('gamer_game', 'gamer.id', 'gamer_id')
+	.leftJoin('game', 'game_id', 'game.id')
 	.then(gamer =>{
-		res.render('gamers/single', {gamer:gamer})
+		let gamesData = []
+		let gameObj = new Object()
+		for (var i = 0; i < gamer.length; i++) {
+			gameObj = new Object();
+			gameObj.title = gamer[i].title
+			gamesData.push(gameObj)
+		}
+		console.log(gamesData);
+		res.render('gamers/single', {gamer:gamer[0], gamesData:gamesData})
+		// })
 	})
 });
 
