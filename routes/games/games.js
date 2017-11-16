@@ -41,8 +41,16 @@ router.put('/:id', (req, res) =>{
 		system: req.body.system
 	}, 'id')
 	.then( (ids) =>{
-		let id = ids[0]
-		console.log(ids[0]);
+		// let id = ids[0]
+		res.redirect('/games')
+	})
+})
+
+router.delete('/:id', (req, res) =>{
+	knex('game')
+	.where('id', req.params.id)
+	.del()
+	.then( (ids) =>{
 		res.redirect('/games')
 	})
 })
