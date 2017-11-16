@@ -1,0 +1,27 @@
+<h1>Gamers</h1>
+<a href="/">
+	Back
+</a>
+<ul>
+	{{#each gamers}}
+		<li>
+			<a href="/gamers/{{id}}">
+				<h3>
+					{{name}}
+				</h3>
+			</a>
+		</li>
+	{{/each}}
+</ul>
+
+<form class="" action="/gamers" method="post">
+	<div >
+		<label for="name">
+			Name
+		</label>
+		<input type="text"  id="name" name='name' placeholder="Enter a gamer's name" required>
+	</div>
+	<button type="submit">
+		Submit
+	</button>
+</form>
