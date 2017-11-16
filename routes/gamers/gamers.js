@@ -13,6 +13,9 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) =>{
+	knex('game')
+	.select()
+	.then(games =>{
 	knex('gamer')
 	.select()
 	.where('gamer.id', req.params.id)
@@ -26,17 +29,32 @@ router.get('/:id', (req, res) =>{
 			gameObj.title = gamer[i].title
 			gamesData.push(gameObj)
 		}
-		res.render('gamers/single', {gamer:gamer[0], gamesData:gamesData})
+		console.log(gamesData)
+		res.render('gamers/single', {gamer:gamer[0], gamesData:gamesData, games:games})
+		})
 	})
 });
 
+
+// router.post('/', (req, res) =>{
+// 	knex('gamer')
+// 	.insert({
+// 		name:req.body.name,
+// 	})
+// 	.then( () =>{
+// 		res.redirect('gamers')
+// 	})
+// })
+
 router.post('/', (req, res) =>{
-	knex('gamer')
+	knex('gamer_game')
 	.insert({
-		name:req.body.name,
+		gamer_id: 666,
+		game_id: 999
 	})
-	.then( () =>{
-		res.redirect('gamers')
+	.then( (stuff) =>{
+		console.log(stuff);
+		res.redirect('/single')
 	})
 })
 

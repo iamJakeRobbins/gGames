@@ -8,8 +8,8 @@ exports.up = function(knex, Promise){
   .then(function(){
         return knex.schema.createTable("gamer_game", (table) => {
             table.increments().primary;
-            table.integer("game_id").references("id").inTable("game").onDelete("CASCADE");
-            table.integer("gamer_id").references("id").inTable("gamer").onDelete("CASCADE");
+            table.integer("game_id")
+            table.integer("gamer_id")
         });
     });
 };

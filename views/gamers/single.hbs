@@ -28,6 +28,20 @@
 </form>
 
 <h2>Games {{gamer.name}} Plays:</h2>
+
 	{{#each gamesData}}
-		<li>{{title}}</li>
+		<li>
+			{{title}}<button type="button" name="button">remove</button>
+		</li>
 	{{/each}}
+<h2>
+	Add a Game:
+</h2>
+<form class="" action="/gamers/{{gamer.id}}" method="post">
+	<select>
+		{{#each games}}
+	  <option value={{id}}>{{title}}</option>
+		{{/each}}
+	</select>
+	<button type="submit" name="button">Add Game</button>
+</form>
