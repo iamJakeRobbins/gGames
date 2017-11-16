@@ -12,14 +12,24 @@ router.get('/', (req, res) => {
 	})
 });
 
+router.get('/:id', (req, res) =>{
+	knex('game')
+	.select()
+	.where('id', req.params.id)
+	.first()
+	.then(game =>{
+		console.log(game)
+		res.render('games/single', {game:game})
+	})
+});
+
 router.post('/', (req, res) =>{
 	knex('game')
 	.insert({
 		title:req.body.title,
 		system:req.body.system,
 	})
-	.then( (stuff) =>{
-		console.log('hello')
+	.then( () =>{
 		res.redirect('games')
 	})
 })
