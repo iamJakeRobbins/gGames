@@ -1,18 +1,18 @@
 [x] Creating an Express server
 
-[ ] Rendering HTML through Handlebars
+[x] Rendering HTML through Handlebars
 
 [x] Setting up a database with knex migrations and seeds
 
-[ ] Express routes (in app.js or a separate routes folder)
+[x] Express routes (in app.js or a separate routes folder)
 
 [x] Knex query to get all
 
-[ ] Knex query to get one
+[x] Knex query to get one
 
-[ ] Knex insert
+[x] Knex insert
 
-[ ] Knex update
+[x] Knex update
 
 [ ] Knex delete
 
