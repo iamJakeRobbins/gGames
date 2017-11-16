@@ -1,0 +1,34 @@
+<h1>Games</h1>
+<a href="/">
+	Back
+</a>
+<ul>
+	{{#each games}}
+		<li>
+			<a href="/todos/{{id}}">
+				<h3>
+					{{title}}
+				</h3>
+			</a>
+		</li>
+		<h4>
+			System: ({{system}})
+		</h4>
+	{{/each}}
+</ul>
+
+<form class="" action="/games" method="post">
+	<div >
+		<label for="title">
+			Title
+		</label>
+		<input type="text"  id="title" name='title' placeholder="Enter a game title" required>
+	</div>
+	<div>
+		<label for="title">System</label>
+			<input type="text" id="system" name='system' placeholder="Enter the game's system" required>
+	</div>
+	<button type="submit">
+		Submit
+	</button>
+</form>
