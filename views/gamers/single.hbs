@@ -1,22 +1,22 @@
-<h2>
-	{{gamer.name}}
-</h2>
 
 <a href="/gamers">
 	Back
 </a>
+<h2>
+	{{gamer.name}}
+</h2>
 
-<form action="/gamers/{{gamer.id}}?_method=PUT" method="post">
+<!-- <form action="/gamers/{{gamer.id}}?_method=PUT" method="post">
 	<div >
 		<label for="name">
 			Name
 		</label>
 		<input type="text"  id="name" name='title' value="{{gamer.name}}" placeholder="Enter a gamer name" required>
-	</div>
-	<button type="submit">
+	</div> -->
+	<!-- <button type="submit">
 		Edit
-	</button>
-</form>
+	</button> -->
+<!-- </form>
 <form action="/gamers?_method=DELETE" method="post">
 	<div class="del" >
 		<label for="name">
@@ -25,9 +25,9 @@
 		<input type="text"  id="name" name='name' value="{{gamer.name}}" placeholder="Enter a gamer name" required>
 	</div>
 <button type="submit">Delete</button>
-</form>
+</form> -->
 
-<h2>Games {{gamer.name}} Plays:</h2>
+<h3>Games {{gamer.name}} Plays:</h3>
 
 	{{#each gamesData}}
 
@@ -37,9 +37,9 @@
 		</li>
 	</form>
 	{{/each}}
-<h2>
+<h3>
 	Add a Game:
-</h2>
+</h3>
 <form action="/gamers/{{gamer.id}}" method="post">
 	<select name='game_id'>
 		{{#each games}}
