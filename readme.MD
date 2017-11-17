@@ -14,8 +14,8 @@
 
 [x] Knex update
 
-[ ] Knex delete
+[x] Knex delete
 
-[ ] Knex joins
+[x] Knex joins
 
 [x] Deploying to Heroku
