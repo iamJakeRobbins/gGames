@@ -37,10 +37,10 @@
 <h2>
 	Add a Game:
 </h2>
-<form class="" action="/gamers/{{gamer.id}}" method="post">
-	<select>
+<form action="/gamers/{{gamer.id}}" method="post">
+	<select name='game_id'>
 		{{#each games}}
-	  <option value={{id}}>{{title}}</option>
+	  <option  value={{id}}>{{title}}</option>
 		{{/each}}
 	</select>
 	<button type="submit" name="button">Add Game</button>
