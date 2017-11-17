@@ -17,7 +17,7 @@
 		Edit
 	</button>
 </form>
-<form action="/gamers/{{gamer.id}}?_method=DELETE" method="post">
+<form action="/gamers?_method=DELETE" method="post">
 	<div class="del" >
 		<label for="name">
 			Title
@@ -30,9 +30,12 @@
 <h2>Games {{gamer.name}} Plays:</h2>
 
 	{{#each gamesData}}
+
+	<form action="/gamers/{{gamer_id}}"?_method=DElETEmethod="post">
 		<li>
-			{{title}}<button type="button" name="button">remove</button>
+			{{title}}<button value="{{gamer_game_id}}" name="id" type="submit">Remove</button>
 		</li>
+	</form>
 	{{/each}}
 <h2>
 	Add a Game:
