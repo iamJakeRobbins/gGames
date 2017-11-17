@@ -17,7 +17,7 @@ router.get('/:id', (req, res) =>{
 	.select()
 	.then(games =>{
 	knex('gamer')
-	.select()
+	.select('*', 'gamer_game.id as row_id')
 	.where('gamer.id', req.params.id)
 	.innerJoin('gamer_game', 'gamer.id', 'gamer_id')
 	.innerJoin('game', 'game_id', 'game.id')
@@ -29,7 +29,7 @@ router.get('/:id', (req, res) =>{
 				gamesData: gamesData,
 				games: games,
 			}
-			console.log(data);
+			console.log(data)
 			res.render('gamers/single',data)
 			})
 		})
@@ -53,21 +53,20 @@ router.post('/:id', (req, res) =>{
 	.insert({
 		gamer_id: req.body.gamer_id,
 		game_id: req.body.game_id
-	})
-	.then( () =>{
+	}).then( () =>{
 		res.redirect(`/gamers/${req.body.gamer_id}`)
 	})
 })
 
-// router.delete('/:id', (req, res) =>{
-// 	console.log('hello')
-// 	knex('gamer_game')
-// 	.where('id', req.body.id)
-// 	.del()
-// 	.then(() =>{
-// 		res.redirect(`/gamers/${req.body.gamer_id}`)
-// 	})
-// })
+router.delete('/:id', (req, res) =>{
+	knex('gamer_game')
+	.select()
+	.where('id', req.body.id)
+	.del()
+	.then(() =>{
+		res.redirect(`/gamers/${req.params.id}`)
+	})
+})
 
 
 module.exports = router;

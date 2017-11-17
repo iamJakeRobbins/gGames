@@ -31,9 +31,9 @@
 
 	{{#each gamesData}}
 
-	<form action="/gamers/{{gamer_id}}"?_method=DElETEmethod="post">
+	<form action="/gamers/{{gamer_id}}?_method=DELETE" method="post">
 		<li>
-			{{title}}<button value="{{gamer_game_id}}" name="id" type="submit">Remove</button>
+			{{title}}<button value="{{row_id}}" name="id" type="submit">Remove</button>
 		</li>
 	</form>
 	{{/each}}
